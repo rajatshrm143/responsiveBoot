@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router"
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bootResponse';
+  rajat: any;
+  hideElem: boolean = false;
+
+  constructor(private route: Router) {
+
+  }
+
+  ngOnInIt() {
+    if (localStorage.getItem('userEmail') != '' || sessionStorage.getItem('userEmail') != '') {
+      this.hideElem = true;
+    }
+  }
+
+
+
+
 }

@@ -1,0 +1,31 @@
+<section>
+    <div class="container">
+        <div class="col-lg-12 col-sm-12">
+            <div class="d-flex justify-content-center">
+                <div class="card  text-center">
+                    <div class="card-header">
+                        Enter OTP sent to {{email}}
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="form">
+
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">OTP</label>
+                                <input type="text" min="4" max="6" class="form-control" formControlName="otp">
+                                <div class="form-error" *ngIf="!form.get('otp').valid && form.get('otp').touched">
+                                    Please enter the valid OTP.
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+                                <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+                            </div>
+                            <button type="submit" (click)="login()" [disabled]="!form.valid"
+                                class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
